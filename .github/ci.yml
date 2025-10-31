@@ -1,0 +1,21 @@
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches:
+      - main   # change if your default branch is 'master' or something else
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Say hello (simple always-passing step)
+        run: |
+          echo "✅ Hello from GitHub Actions — the workflow is running"
